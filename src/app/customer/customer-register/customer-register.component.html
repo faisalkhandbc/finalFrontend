@@ -1,0 +1,68 @@
+<app-register-nav></app-register-nav>
+<div class="page-wrapper bg-dark p-t-10 p-b-50">
+  <div class="wrapper wrapper--w900">
+    <div class="card card-6">
+      <div class="card-heading">
+        <h2 class="title">Please Fill the Following Details</h2>
+      </div>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="card-body">
+
+          <div class="form-row">
+            <div class="name">Name</div>
+            <div class="value">
+              <input class="input--style-6" autocomplete="on" spellcheck="false" type="text" name="name"
+                placeholder="Enter your name" ngModel required #name="ngModel">
+            </div>
+
+
+
+          </div>
+
+          <div class="form-row">
+            <div class="name">Mobile Number</div>
+            <div class="value">
+              <input class="input--style-6" autocomplete="on" spellcheck="false" type="text" name="contact"
+                placeholder="Enter your mobile number"pattern="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$" maxlength="10" ngModel required #name="ngModel">
+            </div>
+
+
+
+          </div>
+
+          
+
+          <div class="form-row">
+            <div class="name">Order Type</div>
+            <div class="value">
+
+              <select name="ordertype"  (change)="onSelected($event)">
+                <option value="">Choose Order Type</option>
+                <option value="Takeaway">Takeaway</option>
+                <option value="Dine-In">Dine-In</option>
+              </select> 
+            </div>
+          </div>
+
+          <!-- <div *ngIf="select=='Dine-In'" class="form-row">
+            <div class="name">Table</div>
+            <div class="value">
+              <input [value]="table" class="input--style-6" autocomplete="on" spellcheck="false" type="number" name="table"
+                placeholder="Enter Table Number" ngModel required #name="ngModel">
+            </div>
+          </div> -->
+
+
+        </div>
+
+        <div class="card-footer">
+          <button class="btn btn-primary" [disabled]="f.invalid" type="submit">PlaceOrder</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="errors" *ngIf="errorMessage">
+  <app-message-box [message]="errorMessage" [styl]="styl"></app-message-box>
+</div> -->

@@ -1,0 +1,99 @@
+<app-header></app-header>
+<div class="bg-dark">
+  <div *ngIf="loading; then thenBlock else myelseBlock"></div>
+<ng-template #thenBlock>
+  <app-loading></app-loading>
+</ng-template>
+<ng-template #myelseBlock>
+  <div *ngIf="empty; else elseBlock" style="overflow-x: hidden;">
+    <div style="margin-top: 50px;" class="d-flex justify-content-center">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center mb-5 animated pulse infinite" style="color: #2f2e41;">Seems Like Empty Feedback
+            List!!!!
+          </h3>
+          <img src="assets/img/empty.svg" alt="" class="img-fluid "
+            style="max-height: 500px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="container bg-dark" id="container">
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-image">
+            <thead>
+              <tr>
+                <th scope="col" style="color: #cfef0d;">#</th>
+                <th scope="col" style="color: #cfef0d;">Name</th>
+                
+                <th scope="col" style="color: #cfef0d;">Feedback</th>
+                <th scope="col" style="color: #cfef0d;">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of feedbackList;index as i">
+                <th scope="row" style="color: #cfef0d;">{{i+1}}</th>
+                <td class="name" style="color: #cfef0d;">{{item.name}}</td>
+                <td style="min-width: 200px;" class="email" style="color: #cfef0d;">{{item.feedback}}</td>
+                <td style="min-width: 200px;" style="color: #cfef0d;">
+                  {{item.date}}
+                </td>
+        
+              </tr> 
+            </tbody>
+          </table>
+        </div>
+        <div class="page-wrapper bg-dark p-t-10 p-b-50">
+          <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+              <div class="card-heading">
+                <h2 class="title">Send Feedback</h2>
+              </div>
+              <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <div class="card-body">
+        
+                  <div class="form-row">
+                    <div class="name">Name</div>
+                    <div class="value">
+                      <input class="input--style-6" autocomplete="off" spellcheck="false" type="text" name="name"
+                        placeholder="Enter you name" ngModel required #name="ngModel">
+                    </div>
+        
+                    
+                    
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="name">Your feedback</div>
+                    <div class="value">
+                      <textarea class="input--style-6" placeholder="Type your message ..." autocomplete="off" spellcheck="false"
+                        name="feedback" ngModel required #feedback="ngModel"></textarea>
+                    </div>
+                  </div>
+        
+        
+                </div>
+        
+                <div class="card-footer">
+                  <button class="btn btn--radius-2 btn--blue-2" [disabled]="f.invalid" type="submit">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  
+
+</ng-template>
+
+<div class="box">
+  <div class="error" [ngStyle]="styl">
+    {{ errorMessage| uppercase }}
+  </div>
+</div>
+</div>

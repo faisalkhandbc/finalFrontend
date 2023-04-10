@@ -1,0 +1,75 @@
+<app-admin-nav></app-admin-nav>
+<div *ngIf="loading; then thenBlock else myelseBlock"></div>
+<ng-template #thenBlock>
+  <app-loading></app-loading>
+</ng-template>
+<ng-template #myelseBlock>
+  <div class="page-wrapper bg-dark p-t-10 p-b-50">
+    <div class="wrapper wrapper--w900">
+      <div class="card card-6">
+        <div class="card-heading">
+          <h2 class="title">Edit Food</h2>
+        </div>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+          <div class="card-body">
+
+            <div class="form-row">
+              <div class="name">Food name</div> 
+              <div class="value">
+                <input class="input--style-6" autocomplete="off" spellcheck="false" type="text" name="foodname"
+                  [(ngModel)]="food.foodname" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="name">Food Price</div>
+              <div class="value">
+
+                <input class="input--style-6" type="number" autocomplete="off" spellcheck="false" min="1"
+                  name="foodprice" [(ngModel)]="food.foodprice" pattern="^[-+]?\d*$" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Description</div>
+              <div class="value">
+
+                <input class="input--style-6" type="text" autocomplete="off" spellcheck="false" min="1"
+                  name="description" [(ngModel)]="food.description" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Category</div>
+              <div class="value">
+
+                <select name="category" (change)="onSelected($event)">
+                  <option value="">Select Category</option>
+                  <option value="Veg">Veg</option>
+                  <option value="Non-Veg">Non-Veg</option>
+                  <option value="Beverages">Beverages</option>
+                  <option value="Desserts">Desserts</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Food Image</div>
+              <div class="value">
+                <input class="input--style-6" type="text" autocomplete="off" spellcheck="false" min="1" name="foodimage"
+                  [(ngModel)]="food.foodimage" required>
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <div class="card-footer">
+            <button class="btn btn--radius-2 btn--blue-2" [disabled]="f.invalid" type="submit">Edit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>

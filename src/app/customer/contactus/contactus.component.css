@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('/assets/img/About.jpeg');
+    height: 100vh;
+}
+
+.container1{
+    background-color: yellow;
+    /* margin-top: 30vh; */
+    padding-top: 10px;
+    margin-left: 50vh;
+    margin-right: 50vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    
+}

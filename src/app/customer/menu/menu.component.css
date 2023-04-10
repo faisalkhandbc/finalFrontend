@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+/* main content */
+.cont{
+  background-color: black;
+  height: 100vh
+}
+/* .search{
+  background-color: black;
+}
+div{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+} */
+
+.box {
+  position:fixed;
+   bottom: 20px;
+   right: 20px;
+  color: orange;
+}
+.error {
+  min-width: min(400px, 70vw);
+  max-width: 1000px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: animate 400ms forwards var(--animation-function);
+}
+.box .error {
+  margin: 1rem;
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 1rem 1rem;
+}
+
+
+@keyframes animate {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 650px) {
+  .error {
+    /* background: rgb(240, 71, 71); */
+    transform: translateY(-50px);
+    white-space: normal;
+  }
+}
+
+
+.search{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+h3,h2 
+{
+  padding-top: 10px;
+  font-family:Acme, sans-serif;
+  color: #254053;
+}
+body {
+  background-color: #fff;
+}
+
+.cards {
+  margin: 0 11.5% 0;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 60px));
+  grid-gap: 40px;
+}
+
+.crd {
+  grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.wrapper {
+  width: 300px;
+  height: auto;
+  background: white;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.wrapper:hover {
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
+.containerr {
+  width: 100%;
+  height: 100%;
+}
+.top  img{
+  height: 210px;
+  min-height: 210px;
+  /* max-height: 212px; */
+  width: 100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+}
+.bottom {
+  width: 200%;
+}
+.wrapper .containerr .bottom h1 {
+  margin: 0;
+  padding: 0;
+}
+.wrapper .containerr .bottom p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: tomato;
+}
+.left {
+  /* height: 100%; */
+  width: 50%;
+  background: #cfef0d;
+  position: relative;
+  float: left;
+}
+.left .details {
+  padding: 10px;
+  float: left;
+}
+
+
+.left .buy {
+  float: right;
+}
+
+
+
+/* done */
+.buy fa-icon{
+  font-size: 30px;
+  padding: 30px;
+  color: black;
+  transition: ease all 0.5s;
+}
+
+
+/* inside */
+.inside {
+  z-index: 9;
+  background: #cfef0d;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  border-radius: 0px 0px 200px 200px;
+  transition: all 0.5s, border-radius 2s, top 1s;
+  overflow: hidden;
+}
+.inside .icon {
+  position: absolute;
+  right: 80px;
+  top: 78px;
+  color:black;
+  opacity: 1;
+  font-weight: bold;
+  font-size: x-large;
+  background-color: #cfef0d;
+}
+.inside:hover {
+  width: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 0;
+  height: 72%;
+}
+.inside:hover .icon {
+  opacity: 0;
+  right: 15px;
+  top: 15px;
+}
+.inside:hover .contents {
+  opacity: 1;
+  transform: scale(1);
+  transform: translateY(0);
+}
+.inside .contents {
+  padding: 5%;
+  opacity: 0;
+  transform: scale(0.5);
+  transform: translateY(-200%);
+  transition: opacity 0.2s, transform 0.8s;
+}
+.inside {
+  color: #254053;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .crd {
+      grid-column-end: span 4;
+    }
+
+  }
+
+@media only screen and (max-width: 1135px) {
+
+      .crd{
+        grid-gap: 20px;
+      }
+      .wrapper{
+        width: 270px;
+    }
+    }
+    @media only screen and (max-width: 1037px) {
+      .cards {
+        margin: 0 5% 0;
+      }
+    }
+@media only screen and (max-width: 1000px) {
+  .crd {
+    grid-column-end: span 4;
+    grid-gap: 20px;
+  }
+  .wrapper{
+      width: 270px;
+  }
+}
+@media only screen and (max-width: 1037px) {
+  .cards {
+    margin: 0 2.5% 0;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  .crd {
+    grid-column-end: span 6;
+  }
+  .wrapper{
+      width: 300px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .cards{
+    grid-gap: 0px;
+  }
+  .crd {
+    grid-column-end: span 12;
+  }
+}
+
+.message-p{
+  /* background-color: green; */
+  text-align: right;
+  color: aquamarine;
+}

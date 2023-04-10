@@ -1,0 +1,22 @@
+<nav class="navbar  navbar-expand-lg bg-body-tertiary"> 
+  <a [routerLink]="['/']" class="navbar-brand">
+    <img src="assets/img/logoob.jpeg" height="20" alt="OneBite" 
+      style="margin-left: 10px;">
+  </a> 
+  <button style="background-color: #cfef0d;" #collapseButton class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="togglePanel(collapseButton,collapsePanel)">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div #collapsePanel class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" > 
+      <li class="nav-item"><a [routerLink]="['/home/', table]" class="nav-link">Home</a></li>
+      <li class="nav-item"><a [routerLink]="['/menu/', table]" class="nav-link">Menu</a></li>
+      <li class="nav-item"><a [routerLink]="['/myorders/', table]" class="nav-link">My orders</a></li>
+      <li class="nav-item"><a [routerLink]="['/cart/',table]" class="nav-link notification"><fa-icon [icon]="icon"></fa-icon></a></li>
+      <li class="nav-item"><a [routerLink]="['/feedback/',table]" class="nav-link">Send Feeback</a></li>
+      <!-- <li class="nav-item"><a [routerLink]="['/takeaway']" class="nav-link">Takeaway</a></li> -->
+      <li class="nav-item"><a [routerLink]="['/contact/',table]" class="nav-link">Contact Us</a></li>
+      <li class="nav-item"><a [routerLink]="['/about/',table]" class="nav-link">About Us</a></li>
+    </ul>
+  </div>
+</nav>

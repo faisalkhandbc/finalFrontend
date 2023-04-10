@@ -1,0 +1,47 @@
+<nav class="navbar  navbar-expand-lg">
+  <a [routerLink]="['/admin']" class="navbar-brand">
+    <img src="assets/img/logoob.jpeg" height="30" alt="OneBite"
+      style="margin-left: 10px;">
+  </a>
+  <button style="background-color: #cfef0d;" #collapseButton class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="togglePanel(collapseButton,collapsePanel)">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div #collapsePanel class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav"> 
+      <li class="nav-item"><a [routerLink]="['/admin']" class="nav-link">Home</a></li>
+      <li class="nav-item"><a [routerLink]="['/admin/addfood']" class="nav-link">Add Item</a></li>
+      <li class="nav-item"><a [routerLink]="['/admin/viewfood']" class="nav-link">View Item</a></li>
+      <li class="nav-item"><a [routerLink]="['/admin/viewcustomers']" class="nav-link">View customer</a></li>
+      <li class="nav-item"><a [routerLink]="['/admin/orderhistory']" class="nav-link">Order History</a></li>
+      <li class="nav-item"><a [routerLink]="['/admin/viewfeedback']" class="nav-link">View feedback</a></li>
+      <li class="nav-item"><a [routerLink]="['/']" class="nav-link" (click)="logoutuser()">logout</a></li>
+    </ul>
+    
+  </div>
+</nav>
+<div class="float-right">
+  <i class="fa fa-arrow-up "  id="mybtn" style="cursor: pointer;"></i>
+</div>
+
+<!-- <nav class="navbar  navbar-expand-lg bg-body-tertiary"> 
+  <a [routerLink]="['/']" class="navbar-brand">
+    <img src="assets/img/logoob.jpeg" height="20" alt="OneBite" 
+      style="margin-left: 10px;">
+  </a> 
+  <button style="background-color: #cfef0d;" #collapseButton class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="togglePanel(collapseButton,collapsePanel)">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div #collapsePanel class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"> 
+      <li class="nav-item"><a [routerLink]="['']" class="nav-link">Home</a></li>
+      <li class="nav-item"><a [routerLink]="['/menu']" class="nav-link">Menu</a></li>
+      <li class="nav-item"><a [routerLink]="['/myorders']" class="nav-link">My orders</a></li>
+      <li class="nav-item"><a [routerLink]="['/cart']" class="nav-link notification"><fa-icon></fa-icon></a></li>
+      <li class="nav-item"><a [routerLink]="['/feedback']" class="nav-link">Send Feeback</a></li>
+      <li class="nav-item"><a [routerLink]="['/takeaway']" class="nav-link">Takeaway</a></li>
+      <li class="nav-item"><a [routerLink]="['/contact']" class="nav-link">Contact Us</a></li>
+      <li class="nav-item"><a [routerLink]="['/about']" class="nav-link">About Us</a></li>
+    </ul>
+  </div>
+</nav> -->

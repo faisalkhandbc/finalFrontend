@@ -1,0 +1,9 @@
+.navbar{
+    background-color: black; 
+    color: #cfef0d;
+    min-height: 75px;
+    border-bottom: 1px solid #cfef0d;
+    box-shadow: 0 0px 18px 4px rgba(0,0 , 0, 0.719);
+    display: flex;
+    justify-content: space-between;
+  }
